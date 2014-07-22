@@ -51,14 +51,9 @@
 
     <script id="articleList-tpl" type="text/template">
         {{#each this}}
-            <li>
-                <img class="media-object" src="assets/pics/{{pic}}" />
+            <li style="background-image: url('assets/pics/{{pic}}')">
+                <!--<img class="media-object" src="assets/pics/{{pic}}" />-->
                 <h2>{{title}}</h2>
-                <p>{{main}}</p>
-
-                <p class="ui-li-aside">
-                    <strong>{{department}}</strong>
-                </p>
             </li>
         {{/each}}
     </script>
