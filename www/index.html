@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="assets/css/ratchet.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
+        <link href="assets/css/pageslider.css" rel="stylesheet">
+    </head>
+    <body>
+    <script id="dashboard-tpl" type="text/template">
+        <header class="bar bar-nav">
+            <a class="btn btn-link btn-nav pull-left" href="#myModal">
+                <span class="icon icon icon-bars"></span>
+
+            </a>
+            <div id="myModal" class="modal">
+                <header class="bar bar-nav">
+                    <a class="icon icon-close pull-right" href="#myModal"></a>
+                    <h1 class="title">Modal</h1>
+                </header>
+
+                <div class="content">
+                    <p class="content-padded">The contents of my modal go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                </div>
+            </div>
+            <h1 class="title">###</h1>
+
+        </header>
+        <div class="content">
+
+
+        </div>
+    </script>
+    <script id="articleList-tpl" type="text/template">
+        {{#each this}}
+        <li class="table-view-cell media">
+            <a href="#articles/{{ id }}">
+                <img class="media-object pull-left" src="assets/pics/{{pic}}">
+                <div class="media-body">
+                    {{title}}
+                    <p>{{main}}</p>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+
+    <script id="article-tpl" type="text/template">
+
+    </script>
+
+        <script src="cordova.js"></script>
+        <script src="lib/fastclick.js"></script>
+        <script src="lib/handlebars.js"></script>
+        <script src="lib/jquery.js"></script>
+        <script src="lib/ratchet.js"></script>
+        <script src="lib/underscore.js"></script>
+        <script src="lib/backbone.js"></script>
+        <script src="lib/pageslider.js"></script>
+
+        <script src="js/models.js"></script>
+        <script src="js/DashboardView.js">
+
+        </script>
+        <script src="js/ArticleListView.js"></script>
+        <!--<script src="js/EmployeeView.js"></script>-->
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
