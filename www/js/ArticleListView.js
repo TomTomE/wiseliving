@@ -2,7 +2,9 @@ var ArticleListView = Backbone.View.extend({
 
     tagName:'ul',
 
-    className:'table-view',
+    attributes: {
+        "data-role": "listview"
+    },
 
     initialize:function (options) {
         var self = this;

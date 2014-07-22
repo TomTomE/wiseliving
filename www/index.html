@@ -24,7 +24,7 @@
         <link href="assets/css/jquery.mobile-1.4.3.css" rel="stylesheet">
         <link href="assets/css/jquery.mobile.icons-1.4.3.css" rel="stylesheet">
         <link href="assets/css/styles.css" rel="stylesheet">
-        <link href="assets/css/pageslider.css" rel="stylesheet">
+        <link href="assets/css/pageslider.css"rel="stylesheet">
     </head>
     <body>
     <script id="dashboard-tpl" type="text/template">
@@ -46,26 +46,20 @@
             </div>
 
         </div>
-        <header class="bar bar-nav">
-            <a class="btn btn-link btn-nav pull-left" href="#myModal">
-                <span class="icon icon icon-bars"></span>
-
-            </a>
-            <h1 class="title">###</h1>
-
-        </header>
     </script>
+
+
     <script id="articleList-tpl" type="text/template">
         {{#each this}}
-        <li class="table-view-cell media">
-            <a href="#articles/{{ id }}">
-                <img class="media-object pull-left" src="assets/pics/{{pic}}">
-                <div class="media-body">
-                    {{title}}
-                    <p>{{main}}</p>
-                </div>
-            </a>
-        </li>
+            <li>
+                <img class="media-object" src="assets/pics/{{pic}}" />
+                <h2>{{title}}</h2>
+                <p>{{main}}</p>
+
+                <p class="ui-li-aside">
+                    <strong>{{department}}</strong>
+                </p>
+            </li>
         {{/each}}
     </script>
 
