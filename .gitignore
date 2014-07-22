@@ -14,3 +14,7 @@ www/.idea/vcs.xml
 www/.idea/workspace.xml
 
 www/.idea/www.iml
+
+server/.idea/*
+
+server/node_modules
