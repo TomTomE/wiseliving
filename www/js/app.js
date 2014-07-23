@@ -21,7 +21,6 @@
 
 (function () {
 
-    DashboardView.prototype.template = Handlebars.compile($("#dashboard-tpl").html());
     ArticleListView.prototype.template = Handlebars.compile($("#articleList-tpl").html());
     //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
 

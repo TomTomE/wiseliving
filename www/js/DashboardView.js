@@ -8,9 +8,9 @@ var DashboardView = Backbone.View.extend({
 
     render: function () {
         this.articles.fetch({reset: true});
-        this.$el.html(this.template());
         console.log(this.articles);
-        $("[data-role='content']", this.el).append(this.articlelistView/*.render()*/.el);
+        $(".ui-content").append(this.articlelistView/*.render()*/.el);
+        console.dir(this.el);
         return this;
     }
 

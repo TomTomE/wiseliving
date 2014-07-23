@@ -27,31 +27,26 @@
         <link href="assets/css/pageslider.css"rel="stylesheet">
     </head>
     <body>
-    <script id="dashboard-tpl" type="text/template">
-        <div data-role="page">
-
-            <div data-role="panel" id="mypanel" data-display="push">
-
-            </div>
-
-            <div data-role="header" id="dashboard">
-                <a href="#mypanel" class="ui-btn-left ui-btn ui-btn-inline ui-btn-icon-notext ui-mini ui-corner-all ui-icon-bars"></a>
-                <h1>Up-to-date</h1>
-
-            </div>
-
-            <div data-role="content">
-
-
-            </div>
+    <div data-role="page">
+        <div data-role="panel" id="mypanel" data-display="push">
 
         </div>
-    </script>
 
+        <div data-role="header" id="dashboard" data-position="fixed">
+            <a href="#mypanel" class="ui-btn-left ui-btn ui-btn-inline ui-btn-icon-notext ui-mini ui-corner-all ui-icon-bars"></a>
+            <h1>Up-to-date</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+        </div>
+
+
+    </div>
 
     <script id="articleList-tpl" type="text/template">
         {{#each this}}
-            <li style="background-image: url('assets/pics/{{pic}}')">
+            <li style="background-image: url('assets/pics/{{pic}}'); background-repeat: no-repeat">
                 <!--<img class="media-object" src="assets/pics/{{pic}}" />-->
                 <h2>{{title}}</h2>
             </li>
