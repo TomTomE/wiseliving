@@ -1,17 +1,17 @@
 var DashboardView = Backbone.View.extend({
 
     initialize: function () {
-        this.articles = new ArticleCollection();
-        this.articlelistView = new ArticleListView({collection: this.articles});
-        console.dir(this.articlelistView);
+        this.category = new CategoryCollection();
+        this.categorylistView = new CategoryListView({collection: this.category});
+        console.dir(this.categorylistView);
     },
 
-    render: function () {
-        this.articles.fetch({reset: true});
-        console.log(this.articles);
-        $(".ui-content").append(this.articlelistView/*.render()*/.el);
-        console.dir(this.el);
-        return this;
+        render: function () {
+            this.category.fetch({reset: true});
+            console.log(this.category);
+            $(".ui-content").append(this.categorylistView/*.render()*/.el);
+            console.dir(this.el);
+            return this;
     }
 
 });
