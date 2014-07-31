@@ -1,4 +1,4 @@
-var CategoryListView = Backbone.View.extend({
+var CategoryView = Backbone.View.extend({
 
     tagName:'ul',
 
