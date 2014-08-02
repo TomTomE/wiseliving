@@ -17,17 +17,6 @@ var ArticleCollection = Backbone.Model.extend({
 });
 
 
-var CategoryCollection = Backbone.Collection.extend({
-
-    initialize:function () {
-        console.log("Model Category Collection generated");
-    },
-
-    url: "http://localhost:5000/category"
-
-});
-
-
 var Category = Backbone.Model.extend({
 
     initialize:function () {
@@ -35,4 +24,16 @@ var Category = Backbone.Model.extend({
     },
 
     urlRoot: "http://localhost:5000/category"
+});
+
+var CategoryCollection = Backbone.Collection.extend({
+
+    model: Category,
+
+    initialize:function () {
+        console.log("Model Category Collection generated");
+    },
+
+    url: "http://localhost:5000/category"
+
 });

@@ -19,7 +19,7 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
 
 
-(function () {
+$(function () {
 
     CategoryView.prototype.template = Handlebars.compile($("#category-tpl").html());
     //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
@@ -41,7 +41,6 @@
             if (!dashboardView) {
                 console.log('New dashboard view');
                 dashboardView = new DashboardView();
-                dashboardView.render();
             } else {
                 console.log('reusing dashboard view');
                 dashboardView.delegateEvents(); // delegate events when the view is recycled
@@ -66,6 +65,7 @@
     });
 
     var router = new AppRouter();
+
     Backbone.history.start();
 
     /* --------------------------------- Event Registration -------------------------------- */
@@ -122,4 +122,4 @@
 
     /* ---------------------------------- Local Functions ---------------------------------- */
 
-}());
+});
