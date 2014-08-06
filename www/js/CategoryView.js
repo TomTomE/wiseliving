@@ -12,6 +12,10 @@ var CategoryView = Backbone.View.extend({
     },
 
     initialize:function (options) {
+        this.category = new CategoryCollection();
+
+        this.category.fetch({reset: true});
+        this.collection = this.category;
         var self = this;
         this.collection.on("reset", this.render, this);
     },

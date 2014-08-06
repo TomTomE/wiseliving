@@ -8,7 +8,7 @@ img.media-object  {
 @font-face {
     font-family:'Yoon Gothic';
     font-style:normal;
-    font-weight:200;
+    font-weight:900;
     src:url("../fonts/yoon-gothic_750.eot?") format("eot"),
         url("../fonts/yoon-gothic_720.woff") format("woff"),
         url("../fonts/yoon-gothic_720.ttf") format("truetype");
