@@ -1,11 +1,11 @@
 var DashboardView = Backbone.View.extend({
 
     initialize: function () {
-        this.categoryView = new CategoryView();
+        this.categoryListView = new CategoryListView();
     },
 
     render: function () {
-        $(".ui-content").append(this.categoryView.el);
+        $(".ui-content").append(this.categoryListView.el);
         return this;
     }
 });

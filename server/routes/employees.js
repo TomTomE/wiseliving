@@ -1,4 +1,4 @@
-var employees = [
+var categories = [
     {"id": 0, "title": "James", "lastName": "King", "managerId": 0, "managerName": "", "main": "President and CEO", "department": "Corporate", "cellPhone": "617-000-0001", "officePhone": "781-000-0001", "email": "jking@fakemail.com", "city": "Boston, MA", "pic": "pic1.jpg", "twitterId": "@fakejking", "blog": "http://coenraets.org"},
     {"id": 1, "title": "Julie", "lastName": "Taylor", "managerId": 1, "managerName": "James King", "main": "VP of Marketing", "department": "Marketing", "cellPhone": "617-000-0002", "officePhone": "781-000-0002", "email": "jtaylor@fakemail.com", "city": "Boston, MA", "pic": "pic2.jpg", "twitterId": "@fakejtaylor", "blog": "http://coenraets.org"},
     {"id": 2, "title": "Eugene", "lastName": "Lee", "managerId": 1, "managerName": "James King", "main": "CFO", "department": "Accounting", "cellPhone": "617-000-0003", "officePhone": "781-000-0003", "email": "elee@fakemail.com", "city": "Boston, MA", "pic": "pic3.jpg", "twitterId": "@fakeelee", "blog": "http://coenraets.org"},
@@ -10,10 +10,10 @@ var employees = [
 
 exports.findAll = function (req, res, next) {
     console.log("Find all");
-    res.send(employees);
+    res.send(categories);
 };
 
 exports.findById = function (req, res, next) {
     var id = req.params.id;
-    res.send(employees[id]);
+    res.send(categories[id]);
 };

@@ -46,9 +46,11 @@
 
     <script id="category-tpl" type="text/x-handlebars-template">
         {{#each this}}
+        <a id="{{id}}">
             <li style="background-image: url('assets/pics/{{pic}}'); background-repeat: no-repeat">
                 <h2>{{title}}</h2>
             </li>
+        </a>
         {{/each}}
     </script>
 
@@ -69,7 +71,7 @@
 
         <script src="js/models.js"></script>
         <script src="js/DashboardView.js"></script>
-        <script src="js/CategoryView.js"></script>
+        <script src="js/CategoryListView.js"></script>
         <!--<script src="js/EmployeeView.js"></script>-->
 
         <script src="js/app.js"></script>

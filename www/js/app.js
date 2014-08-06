@@ -21,7 +21,7 @@
 
 (function () {
 
-    CategoryView.prototype.template = Handlebars.compile($("#category-tpl").html());
+    CategoryListView.prototype.template = Handlebars.compile($("#category-tpl").html());
     //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
 
     /* ---------------------------------- Local Variables ---------------------------------- */
