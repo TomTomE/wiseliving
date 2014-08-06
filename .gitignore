@@ -1,20 +1,3 @@
+.idea/*
 
-www/.idea/.name
-
-www/.idea/encodings.xml
-
-www/.idea/misc.xml
-
-www/.idea/modules.xml
-
-www/.idea/scopes/scope_settings.xml
-
-www/.idea/vcs.xml
-
-www/.idea/workspace.xml
-
-www/.idea/www.iml
-
-server/.idea/*
-
-server/node_modules
+node_modules
