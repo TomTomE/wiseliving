@@ -1,8 +1,11 @@
 var DashboardView = Backbone.View.extend({
 
-    el: "#dashboard",
+    tagName: "ul",
+
+    attributes: {"data-role": "listview", "id": "dashboard"},
 
     initialize: function () {
+        window.$(".ui-content").append(this.$el);
         this.category = new CategoryCollection();
         this.article = new ArticleCollection();
 

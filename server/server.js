@@ -1,7 +1,7 @@
 var express = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
-    employees = require('./routes/employees'),
+employees = require('./routes/employees'),
     app = express();
 
 app.use(bodyParser());          // pull information from html in POST
@@ -14,8 +14,8 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.get('/articles', employees.findAll);
-app.get('/articles/:id', employees.findById);
+app.get('/category', employees.findAll);
+app.get('/category/:id', employees.findById);
 
 app.set('port', process.env.PORT || 5000);
 
