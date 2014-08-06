@@ -3,7 +3,7 @@ var DashboardView = Backbone.View.extend({
     initialize: function () {
         this.category = new CategoryCollection();
 
-        this.
+        this.categoryView = new CategoryView({collection: this.category});
         this.category.fetch({reset: true});
     },
 
