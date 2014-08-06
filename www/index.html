@@ -32,7 +32,7 @@
 
         </div>
 
-        <div data-role="header" data-position="fixed">
+        <div data-role="header" id="dashboard" data-position="fixed">
             <a href="#mypanel" class="ui-btn-left ui-btn ui-btn-inline ui-btn-icon-notext ui-mini ui-corner-all ui-icon-bars"></a>
             <h1>Up-to-date</h1>
         </div>
@@ -41,37 +41,37 @@
 
         </div>
 
+
     </div>
 
     <script id="category-tpl" type="text/x-handlebars-template">
-        <li style="background-image: url('assets/pics/{{pic}}'); background-repeat: no-repeat">
-            <h2>{{title}}</h2>
-        </li>
+        {{#each this}}
+            <li style="background-image: url('assets/pics/{{pic}}'); background-repeat: no-repeat">
+                <h2>{{category}}</h2>
+            </li>
+        {{/each}}
     </script>
-    <script src="cordova.js"></script>
-
-    <script src="lib/fastclick.js"></script>
-    <script src="lib/handlebars.js"></script>
-    <script src="lib/jquery.js"></script>
-    <script src="lib/jquery.mobile-1.4.3.js"></script>
-    <script src="lib/ratchet.js"></script>
-    <script src="lib/underscore.js"></script>
-    <script src="lib/backbone.js"></script>
-    <script src="lib/pageslider.js"></script>
-
-    <script src="js/models.js"></script>
-    <script src="js/DashboardView.js"></script>
-    <script src="js/CategoryView.js"></script>
-    <!--<script src="js/EmployeeView.js"></script>-->
-
-    <script src="js/app.js"></script>
-
 
     <!--
     <script id="article-tpl" type="text/x-handlebars-template">
 
     </script>
     -->
+        <script src="cordova.js"></script>
+        <script src="lib/fastclick.js"></script>
+        <script src="lib/handlebars.js"></script>
+        <script src="lib/jquery.js"></script>
+        <script src="lib/jquery.mobile-1.4.3.js"></script>
+        <script src="lib/ratchet.js"></script>
+        <script src="lib/underscore.js"></script>
+        <script src="lib/backbone.js"></script>
+        <script src="lib/pageslider.js"></script>
 
+        <script src="js/models.js"></script>
+        <script src="js/DashboardView.js"></script>
+        <script src="js/CategoryView.js"></script>
+        <!--<script src="js/EmployeeView.js"></script>-->
+
+        <script src="js/app.js"></script>
     </body>
 </html>

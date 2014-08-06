@@ -1,17 +1,26 @@
 var CategoryView = Backbone.View.extend({
-    el: "",
-    events: {
-        "click li": "test"
+
+    tagName:'ul',
+
+    attributes: {
+        "data-role": "listview",
+        "id" : "listview"
     },
 
-    initialize:function () {
-        var self = this;
-        this.model.on("change", this.render, this);
-    },
+        events: {
+            "click li": "test"
+        },
 
-    render:function () {
-        this.$el.html(this.template(this.model.toJSON()));
-        console.log(this.$el);
+        initialize:function (options) {
+            var self = this;
+            this.collection.on("reset", this.render, this);
+        },
+
+        render:function () {
+            console.log("Category list view render");
+        this.$el.empty();
+        console.log(this.collection.models);
+        this.$el.html(this.template(this.collection.toJSON()));
         return this;
     },
 
