@@ -27,7 +27,7 @@ var CategoryListView = Backbone.View.extend({
 
     test: function(e) {
         var categoryId = e.currentTarget.id;
-
+        console.log(categoryId);
 
     }
 
