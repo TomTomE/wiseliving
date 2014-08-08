@@ -14,8 +14,9 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.get('/articles', employees.findAll);
-app.get('/articles/:id', employees.findById);
+app.get('/category', employees.findAll);
+app.get('/category/:id', employees.findById);
+app.get('/category/pics/:pic', employees.findImgById);
 
 app.set('port', process.env.PORT || 5000);
 
