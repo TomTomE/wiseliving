@@ -1,13 +1,13 @@
-var Article = Backbone.Model.extend({
+var ArticleCollection = Backbone.Collection.extend({
 
     initialize:function () {
-        console.log("Model Article generated");
+        console.log("Article Collection generated");
     },
 
     urlRoot: "http://localhost:5000/articles"
 });
 
-var ArticleCollection = Backbone.Model.extend({
+var Article = Backbone.Model.extend({
 
     initialize:function () {
         console.log("Model Article generated");

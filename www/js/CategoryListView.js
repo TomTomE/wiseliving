@@ -11,12 +11,16 @@ var CategoryListView = Backbone.View.extend({
         "click a": "test"
     },
 
-    initialize:function (options) {
+    initialize:function () {
+        console.log("Generate CategoryListView");
         this.collection = new CategoryCollection();
-
-        this.collection.fetch({reset: true});
         var self = this;
+
+
+        //TODO reset 리스너와 fetch함수 우선순서 상관 없는지 확인요망.  fetch함수가 render: 에 가야할지?? reset 리스너가 필요한지??
+
         this.collection.on("reset", this.render, this);
+
     },
 
     render:function () {
@@ -26,9 +30,11 @@ var CategoryListView = Backbone.View.extend({
     },
 
     test: function(e) {
+        //TODO 클릭시 뷰 전환 작업할것.
         var categoryId = e.currentTarget.id;
         console.log(categoryId);
-
+        this.dashBoard.currentView = "ArticleListView";
+        this.dashBoard.render();
     }
 
 });

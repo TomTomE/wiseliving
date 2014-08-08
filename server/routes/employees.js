@@ -1,13 +1,36 @@
 var fs = require('fs');
 
+var fakeContents = "Lorem ipsum dolor sit amet, dolores scriptorem ius ut," +
+    " integre insolens sea an, vidit habeo insolens quo id";
+
 var categories = [
-    {"id": 0, "title": "James", "lastName": "King", "managerId": 0, "managerName": "", "main": "President and CEO", "department": "Corporate", "cellPhone": "617-000-0001", "officePhone": "781-000-0001", "email": "jking@fakemail.com", "city": "Boston, MA", "pic": "pic1.jpg", "twitterId": "@fakejking", "blog": "http://coenraets.org"},
-    {"id": 1, "title": "Julie", "lastName": "Taylor", "managerId": 1, "managerName": "James King", "main": "VP of Marketing", "department": "Marketing", "cellPhone": "617-000-0002", "officePhone": "781-000-0002", "email": "jtaylor@fakemail.com", "city": "Boston, MA", "pic": "pic2.jpg", "twitterId": "@fakejtaylor", "blog": "http://coenraets.org"},
-    {"id": 2, "title": "Eugene", "lastName": "Lee", "managerId": 1, "managerName": "James King", "main": "CFO", "department": "Accounting", "cellPhone": "617-000-0003", "officePhone": "781-000-0003", "email": "elee@fakemail.com", "city": "Boston, MA", "pic": "pic3.jpg", "twitterId": "@fakeelee", "blog": "http://coenraets.org"},
-    {"id": 3, "title": "John", "lastName": "Williams", "managerId": 1, "managerName": "James King", "main": "VP of Engineering", "department": "Engineering", "cellPhone": "617-000-0004", "officePhone": "781-000-0004", "email": "jwilliams@fakemail.com", "city": "Boston, MA", "pic": "pic4.jpg", "twitterId": "@fakejwilliams", "blog": "http://coenraets.org"},
-    {"id": 4, "title": "Ray", "lastName": "Moore", "managerId": 1, "managerName": "James King", "main": "VP of Sales", "department": "Sales", "cellPhone": "617-000-0005", "officePhone": "781-000-0005", "email": "rmoore@fakemail.com", "city": "Boston, MA", "pic": "pic5.jpg", "twitterId": "@fakermoore", "blog": "http://coenraets.org"},
-    {"id": 5, "title": "Paul", "lastName": "Jones", "managerId": 4, "managerName": "John Williams", "main": "QA Manager", "department": "Engineering", "cellPhone": "617-000-0006", "officePhone": "781-000-0006", "email": "pjones@fakemail.com", "city": "Boston, MA", "pic": "pic6.jpg", "twitterId": "@fakepjones", "blog": "http://coenraets.org"},
-    {"id": 6, "title": "Paula", "lastName": "Gates", "managerId": 4, "managerName": "John Williams", "main": "Software Architect", "department": "Engineering", "cellPhone": "617-000-0007", "officePhone": "781-000-0007", "email": "pgates@fakemail.com", "city": "Boston, MA", "pic": "pic7.jpg", "twitterId": "@fakepgates", "blog": "http://coenraets.org"}
+    {"id": 0, "title": "James", "pic": "pic1.jpg"},
+    {"id": 1, "title": "Julie", "pic": "pic2.jpg"},
+    {"id": 2, "title": "Eugene", "pic": "pic3.jpg"},
+    {"id": 3, "title": "John", "pic": "pic4.jpg"},
+    {"id": 4, "title": "Ray", "pic": "pic5.jpg"},
+    {"id": 5, "title": "Paul", "pic": "pic6.jpg"},
+    {"id": 6, "title": "Paula", "pic": "pic7.jpg"}
+];
+
+var articles = [
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "0", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "1", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "1", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "1", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "2", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "2", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "3", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "3", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "3", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "3", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "3", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""},
+    {"category" : "4", "title": "Lorem ipsum", "writer": "dolor sit amet", "contents": fakeContents, "pic": ""}
 ];
 
 exports.findAll = function (req, res, next) {
@@ -25,10 +48,12 @@ exports.findImgById = function (req, res, next) {
 
     fs.readFile("./assets/pic/" + id, "binary", function(error, file) {
         if(error) {
+            console.log("Connection Fail.");
             res.writeHead(500, {"Content-Type": "text/plain"});
             res.write(error + "\n" + req);
             res.end();
         } else {
+            console.log("Send Image");
             res.writeHead(200, {"Content-Type": "image/jpg"});
             res.write(file, "binary");
             res.end();

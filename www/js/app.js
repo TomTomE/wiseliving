@@ -22,7 +22,10 @@
 (function () {
 
     CategoryListView.prototype.template = Handlebars.compile($("#category-tpl").html());
-    //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    ArticleListView.prototype.template = Handlebars.compile($("#article-tpl").html());
+
+    CategoryListView.prototype.dashBoard;
+    ArticleListView.prototype.dashBoard;
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
