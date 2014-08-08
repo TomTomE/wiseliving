@@ -21,9 +21,8 @@ exports.findById = function (req, res, next) {
 };
 
 exports.findImgById = function (req, res, next) {
-    console.log("Find Image By Id");
     var id = req.params.pic;
-    console.log(req);
+
     fs.readFile("./assets/pic/" + id, "binary", function(error, file) {
         if(error) {
             res.writeHead(500, {"Content-Type": "text/plain"});
