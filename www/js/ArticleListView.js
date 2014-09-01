@@ -7,16 +7,23 @@ var ArticleListView = Backbone.View.extend({
         "id" : "listview"
     },
 
-    initialize:function (options) {
-        var self = this;
-        this.collection.on("reset", this.render, this);
+    events: {
+        "click a": "test"
+    },
+
+    initialize:function () {
+        console.log("Generate ArticleListView");
     },
 
     render:function () {
-        console.log("Article list view render");
+        //TODO 뷰 작업할것.
         this.$el.empty();
-        console.log(this.collection.models);
-        this.$el.html(this.template(this.collection.toJSON()));
+        this.$el.html("<li>HI</li>");
         return this;
+    },
+
+    test: function(e) {
+
     }
+
 });

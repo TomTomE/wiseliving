@@ -21,15 +21,17 @@
 
 (function () {
 
-    DashboardView.prototype.template = Handlebars.compile($("#dashboard-tpl").html());
-    ArticleListView.prototype.template = Handlebars.compile($("#articleList-tpl").html());
-    //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    CategoryListView.prototype.template = Handlebars.compile($("#category-tpl").html());
+    ArticleListView.prototype.template = Handlebars.compile($("#article-tpl").html());
+
+    CategoryListView.prototype.dashBoard;
+    ArticleListView.prototype.dashBoard;
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
 
     var dashboardView;
-
+    var sideTabView = new SideTabView();
     var AppRouter = Backbone.Router.extend({
 
         routes: {
