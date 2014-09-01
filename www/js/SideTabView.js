@@ -7,6 +7,7 @@ var SideTabView = Backbone.View.extend({
     initialize: function () {
         console.log(this.$el);
     },
+    
 
     events: {
         "click #testInputButton": "testInputButton"
