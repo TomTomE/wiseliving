@@ -31,7 +31,7 @@
     var slider = new PageSlider($('body'));
 
     var dashboardView;
-
+    var sideTabView = new SideTabView();
     var AppRouter = Backbone.Router.extend({
 
         routes: {
