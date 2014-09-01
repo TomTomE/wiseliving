@@ -11,7 +11,6 @@ var categories = [
     {"id": 4, "title": "Ray", "pic": "pic5.jpg"},
     {"id": 5, "title": "Paul", "pic": "pic6.jpg"},
     {"id": 6, "title": "Paula", "pic": "pic7.jpg"}
-    
 ];
 
 var articles = [
